@@ -1,7 +1,7 @@
 Academic Portfolio
 =====================================
 
-You can find the LIVE Website [here](krishnodey.github.io).
+You can find the LIVE Website [here](https://krishnodey.github.io/).
 
 This template has been made from scratch taking in consideration some details from Beautiful Jekyll templates.
 
