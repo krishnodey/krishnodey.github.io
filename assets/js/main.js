@@ -96,6 +96,24 @@ $(document).ready(function(){
 		}
 	});
 
+	// Handle 'Education' content
+	$('#professional').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#professionalContent');
+		}
+	});
+
+
 	// Handle 'Publications' content
 	$('#publications').click(function(e) {
 
@@ -114,7 +132,7 @@ $(document).ready(function(){
 	});
 
 	// Handle 'Blog' content
-	$('#tutorials').click(function(e) {
+	$('#teaching').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -126,12 +144,12 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#tutorialsContent');
+			activateDiv('#teachingContent');
 		}
 	});
 
-	// Handle 'Academic' content
-	$('#academic').click(function(e) {
+	// Handle 'Project' content
+	$('#project').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -143,12 +161,11 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#academicContent');
+			activateDiv('#projectContent');
 		}
 	});
-
-	// Handle 'Particular' content
-	$('#particular').click(function(e) {
+	// Handle 'Skills' content
+	$('#skills').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -160,84 +177,15 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#particularContent');
+			activateDiv('#skillsContent');
 		}
 	});
 
-	// Handle 'Conferences' content
-	// $('#conferences').click(function(e) {
-
-	// 	// If the div has already the class active, no need to reload the divs...
-	// 	if(!$(e.target).hasClass('active')) {
-	// 		// Update navbar
-	// 		clearActiveLinks();
-	// 		activateLink(e);
-
-	// 		// Hide other contents
-	// 		clearActiveDivs();
-
-	// 		// Show current content
-	// 		activateDiv('#conferencesContent');
-	// 	}
-	// });
-
-	// Handle 'Experience' content
-	// $('#experience').click(function(e) {
-
-	// 	// If the div has already the class active, no need to reload the divs...
-	// 	if(!$(e.target).hasClass('active')) {
-	// 		// Update navbar
-	// 		clearActiveLinks();
-	// 		activateLink(e);
-
-	// 		// Hide other contents
-	// 		clearActiveDivs();
-
-	// 		// Show current content
-	// 		activateDiv('#experienceContent');
-	// 	}
-	// });
-
-	// Handle 'Projects' content
-	// $('#projects').click(function(e) {
-
-	// 	// If the div has already the class active, no need to reload the divs...
-	// 	if(!$(e.target).hasClass('active')) {
-	// 		// Update navbar
-	// 		clearActiveLinks();
-	// 		activateLink(e);
-
-	// 		// Hide other contents
-	// 		clearActiveDivs();
-
-	// 		// Show current content
-	// 		activateDiv('#projectsContent');
-	// 	}
-	// });
-
-	/*
-	// Handle 'Template' content
-	$('#name').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#nameContent');
-		}
-	});
-	*/
 
 	// Whenever you clic on a blog post, you should be redirected to that post' html
-	$('.clickable').click(function(e) {
-		window.open($(e.currentTarget)[0].childNodes[1].innerText, '_blank').focus();
-	});
+	//$('.clickable').click(function(e) {
+	//	window.open($(e.currentTarget)[0].childNodes[1].innerText, '_blank').focus();
+	//}); 
 
 	// Whenever you clic on a clases particulares heading, you should toggle
 	$('.particular-clickable').click(function(e) {
@@ -267,10 +215,10 @@ $(document).ready(function(){
 	// 	$('#tutorialsContent').focus();
 	// }
 
-	if (((window.location).href).substring(((window.location).href).lastIndexOf('#') + 1) == 'clases-particulares') {
-		$('#particular').click();
-		$('#particularContent').focus();
-	}
+	//if (((window.location).href).substring(((window.location).href).lastIndexOf('#') + 1) == 'clases-particulares') {
+		//$('#particular').click();
+		//$('#particularContent').focus();
+	//}
 
 	// Controls the options menu
 	$('#options-toggler').click(function(e) {
