@@ -1,12 +1,13 @@
 // About Me content is the one by default shown
 $('#educationContent').hide();
+$('#professionalContent').hide();
 $('#publicationsContent').hide();
-$('#experienceContent').hide();
-$('#conferencesContent').hide();
-$('#projectsContent').hide();
-$('#tutorialsContent').hide();
-$('#academicContent').hide();
+$('#teachingContent').hide();
+$('#projectContent').hide();
+$('#skillsContent').hide();
 $('#particularContent').hide();
+
+
 /* Template
 $('#nameContent').hide();
 */
@@ -131,7 +132,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Blog' content
+	// Handle 'Teaching' content
 	$('#teaching').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
@@ -188,15 +189,15 @@ $(document).ready(function(){
 	//}); 
 
 	// Whenever you clic on a clases particulares heading, you should toggle
-	$('.particular-clickable').click(function(e) {
-		var e = $(e.currentTarget)[0].nextElementSibling;
-		if (e.style.display === "none") {
-			e.style.display = "block";
-		}
-		else {
-			e.style.display = "none";
-		}
-	});
+	//$('.particular-clickable').click(function(e) {
+	//	var e = $(e.currentTarget)[0].nextElementSibling;
+	///	if (e.style.display === "none") {
+	//		e.style.display = "block";
+	//	}
+	//	else {
+	//		e.style.display = "none";
+	///	}
+	//});
 
 	// Copy the citation to the clipboard
 	// THIS SHOULD BE THE SAME FOR ALL THE PAPERS
