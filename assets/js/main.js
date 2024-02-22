@@ -5,7 +5,6 @@ $('#publicationsContent').hide();
 $('#teachingContent').hide();
 $('#projectContent').hide();
 $('#skillsContent').hide();
-$('#particularContent').hide();
 $('#trainingContent').hide();
 
 var currentUrl = window.location.href;
@@ -110,7 +109,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Education' content
+	// Handle 'Professional Affiliation' content
 	$('#professional').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
@@ -124,38 +123,6 @@ $(document).ready(function(){
 
 			// Show current content
 			activateDiv('#professionalContent');
-		}
-	});
-
-	// Handle 'Education' content
-	$('#experience').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#experienceContent');
-		}
-	});
-	$('#extracurricular').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#extracurricularContent');
 		}
 	});
 
