@@ -1,5 +1,4 @@
 // About Me content is the one by default shown
-
 $('#educationContent').hide();
 $('#professionalContent').hide();
 $('#publicationsContent').hide();
@@ -8,7 +7,6 @@ $('#projectContent').hide();
 $('#skillsContent').hide();
 $('#particularContent').hide();
 $('#trainingContent').hide();
-
 
 var currentUrl = window.location.href;
 var myArray = currentUrl.split("#");
@@ -129,6 +127,38 @@ $(document).ready(function(){
 		}
 	});
 
+	// Handle 'Education' content
+	$('#experience').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#experienceContent');
+		}
+	});
+	$('#extracurricular').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#extracurricularContent');
+		}
+	});
+
 
 	// Handle 'Publications' content
 	$('#publications').click(function(e) {
@@ -196,8 +226,7 @@ $(document).ready(function(){
 			activateDiv('#skillsContent');
 		}
 	});
-
-	// Handle 'Skills' content
+	// Handle 'Training' content
 	$('#training').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
@@ -213,7 +242,6 @@ $(document).ready(function(){
 			activateDiv('#trainingContent');
 		}
 	});
-
 
 
 	// Whenever you clic on a blog post, you should be redirected to that post' html
