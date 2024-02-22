@@ -1,4 +1,5 @@
 // About Me content is the one by default shown
+
 $('#educationContent').hide();
 $('#professionalContent').hide();
 $('#publicationsContent').hide();
@@ -9,6 +10,25 @@ $('#particularContent').hide();
 $('#trainingContent').hide();
 
 
+var currentUrl = window.location.href;
+var myArray = currentUrl.split("#");
+if (myArray.length >=2) {
+	if (myArray[1] != '') {
+		//console.log(myArray[1])
+		clearActiveLinks();
+		$('#' + myArray[1]).show();
+
+		// Hide other contents
+		clearActiveDivs();
+
+		// Show current content
+		activateDiv('#' + myArray[1]);
+	}
+}else{
+	$('#aboutmeContent').show();
+}
+
+
 /* Template
 $('#nameContent').hide();
 */
@@ -16,14 +36,10 @@ $('#theme').hide();
 $('#lan').hide();
 
 // Hides all the divs in the particular, unless the first one
-$('.particular-clickable').next().hide();
-$('.particular-clickable').next()[0].style.display="block";
+//$('.particular-clickable').next().hide();
+//$('.particular-clickable').next()[0].style.display="block";
 
 $(document).ready(function(){
-
-	$.getJSON("https://api.countapi.xyz/hit/nicolasmeseguer.github.io/634c2142-b35d-430e-b51c-dad16880dd3a", function(response) {
-		$("#contadorVisitas").text(response.value);
-	});
 
 	// First time, check the theme
 	if(localStorage.getItem("theme") === null){
@@ -36,8 +52,6 @@ $(document).ready(function(){
 	let userLang = navigator.language || navigator.userLanguage;
 	if(localStorage.getItem("lan") === null){
 		localStorage.lan = "en";
-		if (userLang.split('-')[0] == "es")
-			localStorage.lan = "es";
 	}
 
 	// Maybe first time or not, so load the localStorage value
@@ -201,6 +215,7 @@ $(document).ready(function(){
 	});
 
 
+
 	// Whenever you clic on a blog post, you should be redirected to that post' html
 	//$('.clickable').click(function(e) {
 	//	window.open($(e.currentTarget)[0].childNodes[1].innerText, '_blank').focus();
@@ -329,10 +344,10 @@ function activateLink(e) {
 	$(e.target).addClass('active');
 	
 	// Hide left panel
-	if(e.target.id == "particular")
-		$('#leftPanel').hide();
-	else
-		$('#leftPanel').show();
+	//if(e.target.id == "particular")
+	//	$('#leftPanel').hide();
+	//else
+	//	$('#leftPanel').show();
 }
 
 function activateDiv(divId) {
@@ -349,10 +364,4 @@ function scrollToContent(divId) {
 			scrollTop: $(divId).offset().top
 		}, 1);
 	}
-}
-
-function resetViews() {
-	$.getJSON("https://api.countapi.xyz/set/nicolasmeseguer.github.io/634c2142-b35d-430e-b51c-dad16880dd3a?value=0", function(response) {
-		$("#contadorVisitas").text("0");
-	});
 }
